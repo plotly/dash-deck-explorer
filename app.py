@@ -106,7 +106,7 @@ app.layout = dbc.Container(layout, fluid=True)
     Input('demo-selection', 'value')
 )
 def update_url(name):
-    return "/" + name
+    return "/deck-explorer/" + name
 
 @app.callback(
     [
@@ -117,10 +117,10 @@ def update_url(name):
     Input('url', 'pathname')
 )
 def update_demo(pathname):
-    if pathname in ['/', None]:
+    if pathname in ["/deck-explorer/", None, "/"]:
         return dash.no_update
 
-    name = pathname.replace("/", "")
+    name = pathname.split("/")[-1]
 
     module = deck_modules[name]
     deck_component = module.app.layout
