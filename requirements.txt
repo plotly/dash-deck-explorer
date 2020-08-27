@@ -1,0 +1,10 @@
+dash
+dash-bootstrap-components
+gunicorn
+networkx
+pandas
+geopandas
+numpy
+pydeck
+dash_deck-0.0.1.tar.gz
+tqdm
