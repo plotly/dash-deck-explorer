@@ -30,7 +30,7 @@ def format_demo_name(demo):
     )
 
 
-ignored_demos = ['usage-events.py']
+ignored_demos = ['usage-events.py', 'usage-style-prop.py']
 
 deck_demos = [
     n.replace(".py", "").replace("usage-", "")
