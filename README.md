@@ -1,37 +1,41 @@
 <!--
 To get started, replace
-{{app.name}} with your app name (e.g. Dash Super Cool App)
-{{app.short}} with the short handle (e.g. dash-super-cool)
+Dash Deck Explorer with your app name (e.g. Dash Super Cool App)
+deck-explorer with the short handle (e.g. dash-super-cool)
 
 If this is in dash sample apps, uncomment the second "git clone https..." and remove the first one.
 If this is in dash sample apps and you have a colab demo, uncomment the "Open in Colab" link to see the badge (make sure to create a ColabDemo.ipynb) first.
 
 -->
-# {{app.name}}
+# Dash Deck Explorer
 <!-- 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/plotly/dash-sample-apps/blob/master/apps/{{app.short}}/ColabDemo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/plotly/dash-sample-apps/blob/master/apps/deck-explorer/ColabDemo.ipynb)
  -->
+
+[Click here for demo](https://dash-gallery.plotly.host/dash-deck-explorer/arc-layer)
+
+This is the companion explorer app for the [dash-deck](https://github.com/plotly/dash-deck) library. For more information, see the repo.
 
 ## Instructions
 
 To get started, first clone this repo:
 
 ```
-git clone https://github.com/plotly/{{app.short}}.git
-cd {{app.short}}
+git clone https://github.com/plotly/deck-explorer.git
+cd deck-explorer
 ```
 
 <!--
 ```
 git clone https://github.com/plotly/dash-sample-apps.git
-cd dash-sample-apps/apps/{{app.short}}
+cd dash-sample-apps/apps/deck-explorer
 ```
 -->
 
 Create and activate a conda env:
 ```
-conda create -n {{app.short}} python=3.7.6
-conda activate {{app.short}}
+conda create -n deck-explorer python=3.7.6
+conda activate deck-explorer
 ```
 
 Or a venv (make sure your `python3` is 3.6+):
