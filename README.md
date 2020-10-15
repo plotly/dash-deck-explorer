@@ -21,7 +21,7 @@ This is the companion explorer app for the [dash-deck](https://github.com/plotly
 To get started, first clone this repo:
 
 ```
-git clone https://github.com/plotly/deck-explorer.git
+git clone https://github.com/plotly/dash-deck-explorer.git
 cd deck-explorer
 ```
 
