@@ -2,7 +2,6 @@ from importlib import import_module
 import inspect
 from textwrap import dedent
 import os
-
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
@@ -20,7 +19,6 @@ def Header(name, app):
 
     return dbc.Row([dbc.Col(title, md=8), dbc.Col(link, md=4)])
 
-
 def format_demo_name(demo):
     return (
         demo
@@ -29,7 +27,6 @@ def format_demo_name(demo):
         .title()
     )
 
-
 ignored_demos = ['usage-events.py', 'usage-style-prop.py']
 
 deck_demos = [
@@ -37,7 +34,6 @@ deck_demos = [
     for n in sorted(os.listdir("./demos"))
     if ".py" in n and n not in ignored_demos
 ]
-
 
 deck_modules = {
     demo: import_module(f'demos.usage-{demo}')
@@ -99,7 +95,7 @@ layout = [
 ]
 
 app.layout = dbc.Container(layout, fluid=True)
-
+app.title = 'Dash Deck Explorer'
 
 @app.callback(
     Output('url', 'pathname'),
