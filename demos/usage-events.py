@@ -4,16 +4,11 @@ like clickInfo, hoverInfo, dragStartInfo, etc.
 """
 import os
 import json
-
-import dash
-from dash.dependencies import Input, Output
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_deck
 import pydeck as pdk
+from dash import Dash, html, dcc, Input, Output
 
 mapbox_api_token = os.getenv("MAPBOX_ACCESS_TOKEN")
-
 
 # 2014 locations of car accidents in the UK
 UK_ACCIDENTS_DATA = (
@@ -118,7 +113,7 @@ tabs = [
     ),
 ]
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 server = app.server
 
 app.layout = html.Div(

@@ -4,10 +4,8 @@ Adapted from: https://pypi.org/project/pydeck/
 This demo shows how to resize the map using the `style` prop.
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
@@ -49,7 +47,7 @@ r = pdk.Deck(
     layers=[layer], initial_view_state=view_state, mapbox_key=mapbox_api_token,
 )
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     [

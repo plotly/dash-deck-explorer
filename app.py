@@ -2,11 +2,8 @@ from importlib import import_module
 import inspect
 from textwrap import dedent
 import os
-import dash
+from dash import Dash, callback, html, dcc, Input, Output
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
 from tqdm import tqdm
 
 def Header(name, app):
@@ -42,7 +39,7 @@ deck_modules = {
 
 print("Loaded demos:", deck_demos)
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
+app = Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
 server = app.server
 
 app_selection = dbc.FormGroup(

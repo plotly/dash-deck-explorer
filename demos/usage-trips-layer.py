@@ -6,10 +6,8 @@ Plot of a single vehicle trip within San Francisco, fading in from the origin.
 Adapted from a deck.gl documentation example.
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
@@ -47,7 +45,7 @@ view_state = pdk.ViewState(
 r = pdk.Deck(layers=[layer], initial_view_state=view_state)
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", mapboxKey=mapbox_api_token)

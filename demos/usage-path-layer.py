@@ -5,15 +5,12 @@ Locations of the Bay Area Rapid Transit lines.
 
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
 mapbox_api_token = os.getenv("MAPBOX_ACCESS_TOKEN")
-
 
 DATA_URL = "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/bart-lines.json"
 df = pd.read_json(DATA_URL)
@@ -42,8 +39,7 @@ layer = pdk.Layer(
 
 r = pdk.Deck(layers=[layer], initial_view_state=view_state)
 
-
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(

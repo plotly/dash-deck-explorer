@@ -16,9 +16,8 @@ JavaScript JSON parser, but it can be parsed by Python's JSON engine.
 """
 import os
 import json
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck
 import pandas as pd
 
@@ -93,7 +92,7 @@ r = pydeck.Deck(
     parameters={"cull": True},
 )
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(
