@@ -10,10 +10,8 @@ note that the .html in the pydeck documentation does not use binary transfer
 and is just for illustration.
 """
 import os
-
-import dash
+from dash import Dash, html
 import dash_deck
-import dash_html_components as html
 import pydeck
 import pandas as pd
 
@@ -88,7 +86,7 @@ del nodes["group"]
 
 r = make_renderer(nodes, use_binary_transport=False)
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", style={"background-color": "charcoal"})

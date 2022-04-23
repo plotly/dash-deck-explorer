@@ -5,10 +5,8 @@ Flights from Heathrow around Europe, adapted from the deck.gl documentation.
 
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
@@ -60,7 +58,7 @@ layers = [scatterplot, line_layer]
 r = pdk.Deck(layers=layers, initial_view_state=INITIAL_VIEW_STATE)
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(

@@ -5,10 +5,8 @@ Property values in Vancouver, Canada, adapted from the deck.gl example
 pages. Input data is in a GeoJSON format.
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck
 import pandas as pd
 
@@ -53,7 +51,7 @@ r = pydeck.Deck(
 )
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", mapboxKey=r.mapbox_key)

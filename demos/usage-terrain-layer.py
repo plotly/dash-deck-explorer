@@ -5,10 +5,8 @@ Extruded terrain using AWS Open Data Terrain Tiles and Mapbox Satellite imagery
 
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 
 MAPBOX_API_KEY = os.getenv("MAPBOX_ACCESS_TOKEN")
@@ -40,7 +38,7 @@ view_state = pdk.ViewState(
 r = pdk.Deck(terrain_layer, initial_view_state=view_state)
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", mapboxKey=MAPBOX_API_KEY)

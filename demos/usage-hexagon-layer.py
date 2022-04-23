@@ -8,15 +8,12 @@ The layer aggregates data within the boundary of each hexagon cell.
 This example is adapted from the deck.gl documentation.
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
 mapbox_api_token = os.getenv("MAPBOX_ACCESS_TOKEN")
-
 
 HEXAGON_LAYER_DATA = "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv"  # noqa
 
@@ -46,8 +43,7 @@ view_state = pdk.ViewState(
 
 r = pdk.Deck(layers=[layer], initial_view_state=view_state)
 
-
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", mapboxKey=mapbox_api_token)

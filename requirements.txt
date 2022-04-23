@@ -1,11 +1,11 @@
-git+https://github.com/plotly/dash-deck.git
-dash
-dash-bootstrap-components
-gunicorn
-networkx
-pandas
-geopandas
-numpy
-pydeck
-tqdm
-requests
+git+https://github.com/plotly/dash-deck.git  #xhlulu this is causing an error when installing requirements locally, but the app still runs (DannyB)
+dash==2.3.1
+dash-bootstrap-components==0.13.1 #FormGroups are depracated in 1.0.0 so this as high as we can go without tweaking the code
+gunicorn==20.0.4
+networkx==2.8
+pandas==1.3.5
+geopandas==0.10.2
+numpy==1.22.3
+pydeck==0.5.0 #Fixed this. Any later version throws an error at runtime. Extra Dloads don't start
+tqdm==4.64.0
+requests==2.27.1

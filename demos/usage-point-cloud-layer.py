@@ -8,10 +8,8 @@ The full data set is viewable here:
 https://sketchfab.com/3d-models/choshi-otaki-falls-oirase-valley-aomori-ea1ef9e7f82f418ea0776ceb6894ebd1
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck
 import pandas as pd
 
@@ -42,7 +40,7 @@ view = pydeck.View(type="OrbitView", controller=True)
 r = pydeck.Deck(point_cloud_layer, initial_view_state=view_state, views=[view])
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", style={"background-color": "#add8e6"})

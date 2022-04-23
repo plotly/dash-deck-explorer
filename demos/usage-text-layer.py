@@ -6,10 +6,8 @@ plotted at the location of that stop
 
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
@@ -46,7 +44,7 @@ r = pdk.Deck(
 )
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(

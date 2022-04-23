@@ -5,15 +5,12 @@ This demos shows you how to use pdk.View for controlling
 the size of the MapView.
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
 mapbox_api_token = os.getenv("MAPBOX_ACCESS_TOKEN")
-
 
 # 2014 locations of car accidents in the UK
 UK_ACCIDENTS_DATA = (
@@ -56,7 +53,7 @@ r = pdk.Deck(
 )
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", tooltip=True, mapboxKey=r.mapbox_key)

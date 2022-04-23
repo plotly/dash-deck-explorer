@@ -5,17 +5,14 @@ A 1906 Britton & Rey's map of San Francisco's 1906 fire, overlaid on
 an interactive map of San Francisco.
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
 mapbox_api_token = os.getenv("MAPBOX_ACCESS_TOKEN")
 
-app = dash.Dash(__name__)
-
+app = Dash(__name__)
 
 # Map of San Francisco from 1906
 IMG_URL = '"https://i.imgur.com/W95ked7.jpg"'

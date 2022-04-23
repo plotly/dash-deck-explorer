@@ -11,12 +11,10 @@ LODES data set: https://lehd.ces.census.gov/data/
 """
 
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
 import pydeck as pdk
 import pandas as pd
+from dash import Dash, html
 
 mapbox_api_token = os.getenv("MAPBOX_ACCESS_TOKEN")
 
@@ -71,7 +69,7 @@ TOOLTIP_TEXT = {
 r = pdk.Deck(arc_layer, initial_view_state=view_state, mapbox_key=mapbox_api_token,)
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(
