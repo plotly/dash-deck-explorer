@@ -12,6 +12,13 @@ If this is in dash sample apps and you have a colab demo, uncomment the "Open in
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/plotly/dash-sample-apps/blob/master/apps/deck-explorer/ColabDemo.ipynb)
  -->
 
+ <div align="center">
+  <a href="https://dash.plotly.com/project-maintenance">
+    <img src="https://dash.plotly.com/assets/images/maintained-by-plotly.png" width="400px" alt="Maintained by Plotly">
+  </a>
+</div>
+
+
 [Click here for demo](https://dash-gallery.plotly.host/dash-deck-explorer/arc-layer)
 
 This is the companion explorer app for the [dash-deck](https://github.com/plotly/dash-deck) library. For more information, see the repo.
