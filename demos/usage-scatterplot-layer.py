@@ -8,10 +8,8 @@ Adapted from the deck.gl documentation.
 """
 import os
 import math
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck as pdk
 import pandas as pd
 
@@ -50,7 +48,7 @@ view_state = pdk.ViewState(
 # Render
 r = pdk.Deck(layers=[layer], initial_view_state=view_state)
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(

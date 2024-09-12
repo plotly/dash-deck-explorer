@@ -10,10 +10,8 @@ viewable here:
 https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set
 """
 import os
-
-import dash
 import dash_deck
-import dash_html_components as html
+from dash import Dash, html
 import pydeck
 import pandas as pd
 
@@ -57,7 +55,7 @@ r = pydeck.Deck(
     mapbox_key=mapbox_api_token,
 )
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(
     dash_deck.DeckGL(r.to_json(), id="deck-gl", tooltip=tooltip, mapboxKey=r.mapbox_key)
